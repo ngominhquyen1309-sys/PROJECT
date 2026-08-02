@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/auth.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Đăng ký</h2>
+        <form id="form">
+            <label>Họ và tên:</label>
+            <input type="text" id="fullName" name="fullname" placeholder="Enter your fullname"><br />
+            <small class="error error-name"></small>
+
+            <label>Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email"><br />
+            <small class="error error-email"></small>
+
+            <label>Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password"><br />
+            <small class="error error-password"></small>
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword"
+                placeholder="Enter your confirm password"><br />
+            <small class="error error-confirm-password"></small>
+
+            <div class="agree-container">
+
+                <div id="agree-box">
+
+                    <input type="checkbox" id="agree">
+
+                    <label for="agree">
+                        Tôi đồng ý với điều khoản
+                    </label>
+
+                </div>
+
+                <small class="error error-agree"></small>
+
+            </div>
+
+            <button type="submit" id="btnSubmit">Register</button>
+
+            <p>Bạn đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </form>
+    </div>
+    <script src="register.js"></script>
+</body>
+
+</html>
