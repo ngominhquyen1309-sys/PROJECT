@@ -60,8 +60,6 @@ for (let i = 0; i < users.length; i++) {
         users[i].password === inputPassword
     ) {
 
-        console.log("Đã tìm thấy user");
-
         currentUser = users[i];
 
         break;
