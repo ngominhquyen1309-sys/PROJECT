@@ -55,10 +55,6 @@ let currentUser = null;
 
 for (let i = 0; i < users.length; i++) {
 
-    console.log("Đang so sánh:");
-    console.log(users[i].email, inputEmail);
-    console.log(users[i].password, inputPassword);
-
     if (
         users[i].email === inputEmail &&
         users[i].password === inputPassword
@@ -72,8 +68,6 @@ for (let i = 0; i < users.length; i++) {
     }
 }
 
-console.log("currentUser =", currentUser);
-
 if (currentUser === null) {
 
     errorPassword.textContent = "Email hoặc mật khẩu không chính xác";
@@ -84,6 +78,20 @@ if (currentUser === null) {
 alert("Đăng nhập thành công");
 
 localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+    if (rememberMe.checked) {
+
+    const rememberUser = {
+
+        user: currentUser,
+
+        expire: Date.now() + 24 * 60 * 60 * 1000
+
+    };
+
+    localStorage.setItem("rememberUser", JSON.stringify(rememberUser));
+
+}
 
 window.location.href = "dashboard.html";
 
@@ -101,7 +109,12 @@ if (rememberUser !== null) {
 
     if (rememberUser.expire > Date.now()) {
 
-        window.location.href = "home.html";
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify(rememberUser.user)
+        );
+
+        window.location.href = "dashboard.html";
 
     } else {
 
